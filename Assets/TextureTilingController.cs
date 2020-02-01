@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 [ExecuteInEditMode]
 public class TextureTilingController : MonoBehaviour
 {
@@ -20,8 +21,7 @@ public class TextureTilingController : MonoBehaviour
         this.prevTextureToMeshZ = this.textureToMeshZ;
 
         this.UpdateTiling();
-        
-        
+
     }
 
     // Update is called once per frame
