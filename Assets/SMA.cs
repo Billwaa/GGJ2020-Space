@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class SMA : MonoBehaviour
 {
+
+    AudioSource aud;
+
+    public AudioClip impact;
+    public AudioClip expandSound;
+    public AudioClip retractSound;
+
     bool expand = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        aud = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,10 +28,14 @@ public class SMA : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+
+        aud.PlayOneShot(impact);
+
         if (collision.gameObject.tag == "Hot")
             if (!expand)
             {
                 expand = true;
+                aud.PlayOneShot(expandSound);
                 this.transform.localScale = new Vector3(4, 4, 4);
             }
 
@@ -34,9 +45,11 @@ public class SMA : MonoBehaviour
 
     void OnCollisionExit(Collision collision)
     {
+
         if (collision.gameObject.tag == "Hot")
             if (expand)
             {
+                aud.PlayOneShot(retractSound);
                 expand = false;
                 //this.transform.localScale = new Vector3(1, 1, 1);
             }

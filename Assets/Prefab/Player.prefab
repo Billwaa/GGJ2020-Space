@@ -341,6 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940d53f2c04e17143bd21e2e42f55fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  death: {fileID: 8300000, guid: dafe76f868d47e84db847588f59a94f7, type: 3}
 --- !u!114 &3909039912432265439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,7 +775,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -808,7 +809,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!82 &148595073
 AudioSource:
   m_ObjectHideFlags: 0
@@ -832,7 +833,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -917,3 +918,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940d53f2c04e17143bd21e2e42f55fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  death: {fileID: 8300000, guid: da8f80515e26dd247bd533849579ef9c, type: 3}
