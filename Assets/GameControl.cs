@@ -29,14 +29,14 @@ public class GameControl : MonoBehaviour
     void Update()
     {
         if (mc.filterThreshhold < 5)
-            mc.filterThreshhold += 0.1f * Time.deltaTime;
+            mc.filterThreshhold += 0.5f * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.Alpha1))
-            SceneManager.LoadScene(0);
-        else if (Input.GetKey(KeyCode.Alpha2))
             SceneManager.LoadScene(1);
-        else if (Input.GetKey(KeyCode.Alpha3))
+        else if (Input.GetKey(KeyCode.Alpha2))
             SceneManager.LoadScene(2);
+        else if (Input.GetKey(KeyCode.Alpha3))
+            SceneManager.LoadScene(3);
 
         if (restart)
         {
