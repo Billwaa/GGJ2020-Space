@@ -8,6 +8,7 @@ TagManager:
   - Hot
   - Platform
   - SMA
+  - Box
   layers:
   - Default
   - TransparentFX

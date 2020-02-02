@@ -56,7 +56,7 @@ public class GravityGun : MonoBehaviour
 
                 //Get rigidbody
                 var rb = hit.collider.GetComponent<Rigidbody>();
-                if (rb != null)
+                if (rb != null & rb.gameObject.tag != "Platform")
                 {
                     if (hit.distance < grabRange)
                     {
@@ -100,12 +100,19 @@ public class GravityGun : MonoBehaviour
                 //Get rigidbody
                 var rb = shootHit.collider.GetComponent<Rigidbody>();
 
+                var shootForceTemp = shootForce;
+
+                Debug.Log(rb.gameObject.name);
+                Debug.Log(rb.gameObject.tag);
+                if (rb.gameObject.tag == "Box")
+                    shootForceTemp *= 50;
+
                 if (rb != null)
                 {
                     grabbedRigidbody.isKinematic = false;
                     grabbedRigidbody = null;
 
-                    rb.AddForceAtPosition(viewCam.transform.forward * shootForce, shootHit.point, ForceMode.Impulse);
+                    rb.AddForceAtPosition(viewCam.transform.forward * shootForceTemp, shootHit.point, ForceMode.Impulse);
 
                     cooldownTimer = cooldownTime;
                 }
