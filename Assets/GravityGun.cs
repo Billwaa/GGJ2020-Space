@@ -102,8 +102,8 @@ public class GravityGun : MonoBehaviour
 
                 var shootForceTemp = shootForce;
 
-                Debug.Log(rb.gameObject.name);
-                Debug.Log(rb.gameObject.tag);
+                //Debug.Log(rb.gameObject.name);
+                //Debug.Log(rb.gameObject.tag);
                 if (rb.gameObject.tag == "Box")
                     shootForceTemp *= 50;
 
