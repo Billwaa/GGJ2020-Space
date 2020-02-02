@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 6594657355024647829}
   - component: {fileID: 6594657355017004629}
   - component: {fileID: 6594657355019243537}
+  - component: {fileID: 148595072}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -275,7 +276,7 @@ MonoBehaviour:
     StrafeSpeed: 4
     RunMultiplier: 1.3
     RunKey: 304
-    JumpForce: 50
+    JumpForce: 52
     SlopeCurveModifier:
       serializedVersion: 2
       m_Curve:
@@ -325,3 +326,15 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0
+--- !u!114 &148595072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6594657355029980659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940d53f2c04e17143bd21e2e42f55fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
