@@ -55,7 +55,7 @@ public class GravityGun : MonoBehaviour
                 if (hitVisual != null) hitVisual.position = hit.point;
 
                 //Get rigidbody
-                if(hit.collider.gameObject.tag != "Platform" & hit.collider.gameObject.tag != "Player")
+                if(hit.collider.gameObject.tag != "Platform" & hit.collider.gameObject.tag != "Player" & hit.collider.gameObject.tag != "Wall")
                 {
                     var rb = hit.collider.GetComponent<Rigidbody>();
                     if (rb != null)
@@ -104,7 +104,7 @@ public class GravityGun : MonoBehaviour
             {
                 //Get rigidbody
 
-                if (shootHit.collider.gameObject.tag != "Platform" & shootHit.collider.gameObject.tag != "Player")
+                if (shootHit.collider.gameObject.tag != "Platform" & shootHit.collider.gameObject.tag != "Player" & shootHit.collider.gameObject.tag != "Wall")
                 {
                     var rb = shootHit.collider.GetComponent<Rigidbody>();
 
