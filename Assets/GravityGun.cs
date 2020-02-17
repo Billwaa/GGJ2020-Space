@@ -81,7 +81,7 @@ public class GravityGun : MonoBehaviour
                         }
                         else
                         {
-                            rb.AddForceAtPosition(viewCam.transform.forward * -dragForce, hit.point);
+                            //rb.AddForceAtPosition(viewCam.transform.forward * -dragForce, hit.point);
                         }
                     }
                 }

@@ -183,8 +183,8 @@ MonoBehaviour:
   viewCam: {fileID: 6594657355028604885}
   hitVisual: {fileID: 0}
   maxRange: 50
-  grabRange: 20
-  dragForce: 20
+  grabRange: 15
+  dragForce: 15
   grabbedRigidbody: {fileID: 0}
   grabHoldDistance: 3
   grabSpeed: 20
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6594657355029980659}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
