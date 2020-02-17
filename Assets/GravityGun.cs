@@ -55,32 +55,37 @@ public class GravityGun : MonoBehaviour
                 if (hitVisual != null) hitVisual.position = hit.point;
 
                 //Get rigidbody
-                var rb = hit.collider.GetComponent<Rigidbody>();
-                if (rb != null & rb.gameObject.tag != "Platform" & rb.gameObject.tag != "Player")
-                { 
-                    if (hit.distance < grabRange)
+                if(hit.collider.gameObject.tag != "Platform" & hit.collider.gameObject.tag != "Player")
+                {
+                    var rb = hit.collider.GetComponent<Rigidbody>();
+                    if (rb != null)
                     {
-                        grabbedRigidbody = rb;
-                        rb.angularVelocity = Vector3.zero;
-                        rb.isKinematic = true;
+                        //Debug.Log(hit.collider.gameObject.name + "\t" + hit.distance + "\t" + (hit.distance < grabRange));
+                        if (hit.distance < grabRange)
+                        {
+                            grabbedRigidbody = rb;
+                            rb.angularVelocity = Vector3.zero;
+                            rb.isKinematic = true;
 
-                        /*
-						var grabPosition = viewCam.transform.position + viewCam.transform.forward * grabHoldDistance;
-						var grabDirection = (grabPosition - rb.position).normalized;
-						var grabTravelDistance = grabDirection * grabSpeed * Time.deltaTime;
-						if(grabTravelDistance.sqrMagnitude < (grabPosition - rb.position).sqrMagnitude) {
-							rb.MovePosition( rb.position + grabTravelDistance );
-						}
-						else {
-							rb.MovePosition( grabPosition );
-						}
-						*/
-                    }
-                    else
-                    {
-                        rb.AddForceAtPosition(viewCam.transform.forward * -dragForce, hit.point);
+                            /*
+                            var grabPosition = viewCam.transform.position + viewCam.transform.forward * grabHoldDistance;
+                            var grabDirection = (grabPosition - rb.position).normalized;
+                            var grabTravelDistance = grabDirection * grabSpeed * Time.deltaTime;
+                            if(grabTravelDistance.sqrMagnitude < (grabPosition - rb.position).sqrMagnitude) {
+                                rb.MovePosition( rb.position + grabTravelDistance );
+                            }
+                            else {
+                                rb.MovePosition( grabPosition );
+                            }
+                            */
+                        }
+                        else
+                        {
+                            rb.AddForceAtPosition(viewCam.transform.forward * -dragForce, hit.point);
+                        }
                     }
                 }
+                
             }
         }
         else
@@ -98,23 +103,27 @@ public class GravityGun : MonoBehaviour
             if (Physics.Raycast(viewCam.transform.position, viewCam.transform.forward, out shootHit, shootRange))
             {
                 //Get rigidbody
-                var rb = shootHit.collider.GetComponent<Rigidbody>();
 
-                var shootForceTemp = shootForce;
-
-                //Debug.Log(rb.gameObject.name);
-                //Debug.Log(rb.gameObject.tag);
-                if (rb.gameObject.tag == "Box")
-                    shootForceTemp *= 50;
-
-                if (rb != null)
+                if (shootHit.collider.gameObject.tag != "Platform" & shootHit.collider.gameObject.tag != "Player")
                 {
-                    grabbedRigidbody.isKinematic = false;
-                    grabbedRigidbody = null;
+                    var rb = shootHit.collider.GetComponent<Rigidbody>();
 
-                    rb.AddForceAtPosition(viewCam.transform.forward * shootForceTemp, shootHit.point, ForceMode.Impulse);
+                    var shootForceTemp = shootForce;
 
-                    cooldownTimer = cooldownTime;
+                    //Debug.Log(rb.gameObject.name);
+                    //Debug.Log(rb.gameObject.tag);
+                    if (rb != null & rb.gameObject.tag == "Box")
+                        shootForceTemp *= 20;
+
+                    if (rb != null)
+                    {
+                        grabbedRigidbody.isKinematic = false;
+                        grabbedRigidbody = null;
+
+                        rb.AddForceAtPosition(viewCam.transform.forward * shootForceTemp, shootHit.point, ForceMode.Impulse);
+
+                        cooldownTimer = cooldownTime;
+                    }
                 }
 
             }

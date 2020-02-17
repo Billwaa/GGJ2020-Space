@@ -37,6 +37,7 @@ public class GameControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(mc != null)
         if (mc.filterThreshhold < 5)
             mc.filterThreshhold += 0.5f * Time.deltaTime;
 

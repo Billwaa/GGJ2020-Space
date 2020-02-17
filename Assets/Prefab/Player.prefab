@@ -189,7 +189,7 @@ MonoBehaviour:
   grabHoldDistance: 3
   grabSpeed: 20
   shootRange: 6
-  shootForce: 20
+  shootForce: 50
   cooldownTimer: 0
   cooldownTime: 0.5
 --- !u!1 &6594657355029980659
