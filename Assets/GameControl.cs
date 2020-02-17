@@ -15,6 +15,15 @@ public class GameControl : MonoBehaviour
     float deathTime = 0;
 
 
+    private void OnMouseEnter()
+    {
+
+        Cursor.lockState = CursorLockMode.Confined; // keep confined in the game window
+        Cursor.lockState = CursorLockMode.Locked;   // keep confined to center of screen
+        Cursor.lockState = CursorLockMode.None;     // set to default default
+    }
+   
+
     // Start is called before the first frame update
     void Start()
     {
