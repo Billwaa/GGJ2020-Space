@@ -18,9 +18,9 @@ public class GravityGun : MonoBehaviour
     public float cooldownTime = 0.5f;
 
     //public BlasterShot shot;
-
     void Update()
     {
+
         /*if (Input.GetMouseButtonDown(2))
         {
             Instantiate(shot, viewCam.transform.position + viewCam.transform.forward * 2, viewCam.transform.rotation);
@@ -56,8 +56,8 @@ public class GravityGun : MonoBehaviour
 
                 //Get rigidbody
                 var rb = hit.collider.GetComponent<Rigidbody>();
-                if (rb != null & rb.gameObject.tag != "Platform")
-                {
+                if (rb != null & rb.gameObject.tag != "Platform" & rb.gameObject.tag != "Player")
+                { 
                     if (hit.distance < grabRange)
                     {
                         grabbedRigidbody = rb;
