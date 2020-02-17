@@ -81,6 +81,7 @@ public class GravityGun : MonoBehaviour
                         }
                         else
                         {
+                            //This is if Object Out of Grab Range
                             //rb.AddForceAtPosition(viewCam.transform.forward * -dragForce, hit.point);
                         }
                     }

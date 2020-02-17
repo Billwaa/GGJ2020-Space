@@ -1576,7 +1576,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 1.0000001}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &349409926
 MeshRenderer:
@@ -4556,7 +4556,7 @@ PrefabInstance:
     - target: {fileID: 1659655063939134855, guid: 88f21369c72eb9648923ecc2b160bc89,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.493
+      value: 2.99
       objectReference: {fileID: 0}
     - target: {fileID: 1659655063939134855, guid: 88f21369c72eb9648923ecc2b160bc89,
         type: 3}
@@ -5618,7 +5618,7 @@ PrefabInstance:
     - target: {fileID: 6594657355030149591, guid: 731bfe86ce2ba3149aea828dcd27f8b5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.78
+      value: 35.38
       objectReference: {fileID: 0}
     - target: {fileID: 6594657355030149591, guid: 731bfe86ce2ba3149aea828dcd27f8b5,
         type: 3}
@@ -5682,12 +5682,12 @@ PrefabInstance:
     - target: {fileID: 6574039501451261002, guid: e9085c14403a3804ea239c3607511630,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.7
+      value: -22.74
       objectReference: {fileID: 0}
     - target: {fileID: 6574039501451261002, guid: e9085c14403a3804ea239c3607511630,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.29
+      value: 22.39
       objectReference: {fileID: 0}
     - target: {fileID: 6574039501451261002, guid: e9085c14403a3804ea239c3607511630,
         type: 3}
