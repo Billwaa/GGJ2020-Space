@@ -29,9 +29,11 @@ public class GameControl : MonoBehaviour
     {
         mc = GameObject.FindObjectOfType<musicControl>();
         aud = this.GetComponent<AudioSource>();
-        mc.filterThreshhold = 0;
         restart = false;
         deathTime = 0;
+
+        if(mc != null)
+            mc.filterThreshhold = 0;
     }
 
     // Update is called once per frame
